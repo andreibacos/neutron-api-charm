@@ -36,7 +36,7 @@ OVERLAY_NET_TYPES = [VXLAN, GRE]
 
 def get_l2population():
     plugin = config('neutron-plugin')
-    return config('l2-population') if plugin == "ovs" else False
+    return config('l2-population') if plugin in ["ovs", "lb"] else False
 
 
 def get_overlay_network_type():
